@@ -1,0 +1,10 @@
+--- #YAML:1.0
+name:     Math-Zap
+version:  1.03
+abstract: Zap objects in 3d space
+license:  perl
+distribution_type: module
+requires:
+recommends:
+build_requires:
+dynamic_config: 0

@@ -1,0 +1,9 @@
+Math::Zap::Draw
+    2004/06/09 1.03 First letter of package names capitalized and source
+    files editted to match following helpful comments from:
+    murat.uenalan@gmx.de
+
+    2004/06/08 1.02 Cube triangulated
+
+    2004/06/01 1.01 Triangles successfuly shadowed
+

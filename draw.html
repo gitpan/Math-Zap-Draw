@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Math::Zap::Draw - supplies methods to draw a scene, containing three
+dimensional objects, as a two dimensional image, using lighting and
+shadowing to assist the human observer in reconstructing the original
+three dimensional scene.</title>
+<link rev="made" href="mailto:" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#author">AUTHOR</a></li>
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Math::Zap::Draw - supplies methods to draw a scene, containing three
+dimensional objects, as a two dimensional image, using lighting and
+shadowing to assist the human observer in reconstructing the original
+three dimensional scene.</p>
+<pre>
+ #!perl -w
+ #______________________________________________________________________
+ # Draw cube floating against triangular corner in 3d with shadows.
+ # Perl License.
+ # PhilipRBrenan@yahoo.com, 2004.
+ #______________________________________________________________________</pre>
+<pre>
+ use Math::Zap::Draw;
+ use Math::Zap::Color;
+ use Math::Zap::Cube;
+ use Math::Zap::Triangle;
+ use Math::Zap::Vector;</pre>
+<pre>
+ #_ Draw _______________________________________________________________
+ # Draw this set of objects.
+ #______________________________________________________________________</pre>
+<pre>
+ draw 
+   -&gt;from    (vector( 10,   10,  10))
+   -&gt;to      (vector(  0,    0,   0))
+   -&gt;horizon (vector(  1,  0.5,   0))
+   -&gt;light   (vector( 20,   30, -20))</pre>
+<pre>
+     -&gt;object(triangle(vector( 0,  0,  0), vector( 8,  0,  0), vector( 0,  8,  0)),                         'red')
+     -&gt;object(triangle(vector( 0,  0,  0), vector( 0,  0,  8), vector( 0,  8,  0)),                         'green')
+     -&gt;object(triangle(vector( 0,  0,  0), vector(12,  0,  0), vector( 0,  0, 12)) - vector(2.5,  0,  2.5), 'blue')
+     -&gt;object(triangle(vector( 0,  0,  0), vector( 8,  0,  0), vector( 0, -8,  0)),                         'pink')
+     -&gt;object(triangle(vector( 0,  0,  0), vector( 0,  0,  8), vector( 0, -8,  0)),                         'orange')
+     -&gt;object(Math::Zap::Cube::unit()*2+vector(3,5,1), 'lightblue')</pre>
+<pre>
+ -&gt;done;</pre>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>This package supplies methods to draw a scene, containing three dimensional
+objects, as a two dimensional image, using lighting and shadowing to assist the
+human observer in reconstructing the original three dimensional scene.</p>
+<p>There are many existing packages to perform this important task: this
+package is the only one to make the attempt in Pure Perl. Pending the
+power of Petaflop Parallel Perl (when we will be set free from C), this
+approach is slow. However, it is not so slow as to be completely useless
+for simple scenes as might be encountered inside, say for instance, beam
+lines used in high energy particle physics, the owners of which often
+have large Perl computers.</p>
+<p>The key advantage of this package is that is open: you can manipulate
+both the objects to be drawn and the drawing itself all in Pure Perl.</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Philip R Brenan at <strong><a href="mailto:philiprbrenan@yahoo.com">philiprbrenan@yahoo.com</a></strong></p>
+
+</body>
+
+</html>
